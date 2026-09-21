@@ -38,8 +38,7 @@ headers = {
 while True:
     print(f'==GEMINI==')
 
-    user_prompt = (
-        'En que piensas? (ingresa tu prompt o "salir" para terminar la sesión): ')
+    user_prompt = input('En que piensas? (ingresa tu prompt o "salir" para terminar la sesión): ')
 
     # Revisa si el usuario desea salir
     if user_prompt.lower().strip() == 'salir':
