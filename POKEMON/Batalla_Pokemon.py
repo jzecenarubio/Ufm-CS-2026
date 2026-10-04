@@ -79,3 +79,29 @@ waiting()
 print(f'\nPokemon 1: {poke_1["nombre"]} (HP: {poke_1["hp"]} | AD: {poke_1["ad"]})')
 print(f'Pokemon 2: {poke_2["nombre"]} (HP: {poke_2["hp"]} | AD: {poke_2["ad"]})')
 
+# Manejo de turnos (ciclo con ambos turnos hasta que uno pierda)
+while True:
+
+    # Turno Poke_1
+    waiting()
+    attack(poke_1, poke_2)
+
+    # Verificar si poke_2 perdió
+    if poke_2['hp'] <= 0:
+        print(f'\nGAME OVER: {poke_1["nombre"]} venció a {poke_2["nombre"]}')
+        break
+
+    # Turno Poke_2
+    waiting()
+    attack(poke_2, poke_1)
+
+    # Verificar si poke_1 perdió
+    if poke_1['hp'] <= 0:
+        print(f'\nGAME OVER: {poke_2["nombre"]} venció a {poke_1["nombre"]}')
+        break
+
+    # Imprimir vidas restantes
+    waiting()
+    print(f'\nHPs restantes')
+    print(f'{poke_1["nombre"]}: {poke_1["hp"]}')
+    print(f'{poke_2["nombre"]}: {poke_2["hp"]}')
